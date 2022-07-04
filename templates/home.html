@@ -1,0 +1,43 @@
+{% load static %}
+<html lang="en">
+<head>    
+    <title></title>
+
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+<body>
+    <div>
+        <center><h1>Friends News Aggregator</h1>
+           <a href="/" class="btn btn-danger">Refresh News</a>
+    </center>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <form action="">
+                    <h3 class="text-centre"><a href="https://www.timesofindia.indiatimes.com/"> News from Times of india</a></h3>
+                    {% for n in toi_news %}
+                    <h5> -  {{n}} </h5>
+                    <hr>
+                    {% endfor %}
+                    <br>
+                </form>    
+            </div>
+            <div class="col-6">
+                <form action="">
+                    <h3 class="text-centre"><a href="https://www.hindustantimes.com/"> News from Hindustan times</a></h3>
+                    {% for htn in ht_news %}
+                    <h5> - {{htn}} </h5>
+                    <hr>
+                    {% endfor %}
+                    <br>
+                </form>
+            </div>
+        </div> 
+</div>
+    <script
+src="http://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>    
+</body>
+</html>
